@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>Company Balance Sheet</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet"
+  href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+  rel="stylesheet">
+
+<!--our structure shravani priya index.html files -->
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+<!--   <link rel="stylesheet" href="resources/assets/css/style.css">
+ -->
+
+  <link rel="stylesheet" href="resources/assets/css/angular-material.css">
+  <link rel="stylesheet" href="resources/assets/css/angular-material.min.css">
+<!--   <link rel="stylesheet" href="resources/assets/css/bootstrap.min.css"> -->
+  <!--   <link rel="stylesheet" href="resources/assets/css/smart-table.min.css">
+
+ -->
+
+
+  <script src="resources/assets/js/angular.min.js"></script>  
+  <script src="resources/assets/js/angular-animate.min.js"></script>
+  <script src="resources/assets/js/angular-aria.min.js"></script>
+  <script src="resources/assets/js/angular-messages.min.js"></script>
+  <script src="resources/assets/js/angular-material.min.js"></script> 
+  <!-- 
+  <script src="resources/assets/js/jquery.min.js"></script> -->
+<!--   <script src="resources/assets/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" src="resources/assets/js/smart-table.min.js"></script>
+  <script src="resources/assets/js/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="resources/assets/js/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="resources/assets/js/ui-bootstrap-tpls.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+<!-- Date -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+
+<!-- pie chart--> 
+ 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<!-- Sidebar JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+ <script type="text/javascript" src="companyModels.js"></script>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+ <div ng-app="companyModelsapp" ng-controller="companyCtrl1">
+
+
+<div class="wrapper">
+
+           <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" data-widget="pushmenu"
+          href="#"><i class="fas fa-bars"></i></a></li>
+        <li class="nav-item d-none d-sm-inline-block"><a
+          href="borrower_details.jsp" class="nav-link">Home</a></li>
+
+      </ul>
+
+
+    </nav>
+
+
+
+          <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="dashboard.html" class="brand-link"> <!-- <img
+        src="resources/assets/lms/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+        class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+        <center><span class="brand-text font-weight-light">AdminLTE 3</span></center>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+           <!--  <img src="resources/assets/lms/dist/img/AdminLTELogo.png"
+              class="img-circle elevation-2" alt="User Image"> -->
+          </div>
+          <div class="info">
+<!--             <a href="dashboard.html" class="d-block">Admine</a>
+ -->          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview "><a
+              href="dashboard.html" class="nav-link active"> <i
+                class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard 
+                </p>
+            </a></li>
+           <!--  <li class="nav-item"><a href="add_account.jsp"
+              class="nav-link "> <i class="nav-icon fas fa-th"></i>
+                <p>Add Account</p>
+            </a></li> -->
+            <li class="nav-item has-treeview"><a href="borrower.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Add Borrower</p>
+            </a></li>
+
+            <li class="nav-item has-treeview"><a href="adminBorrower.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Admin Module</p>
+            </a></li>
+
+             <li class="nav-item has-treeview"><a href="pettyCashMaster.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Petty Cash Module</p>
+            </a></li>
+
+            <li class="nav-item has-treeview"><a href="businessLoan.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Business Loan Module</p>
+            </a></li>
+
+            <li class="nav-item has-treeview"><a href="companyModels.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Company Balance Sheet</p>
+            </a></li>
+           <!--  <li class="nav-item has-treeview"><a href="unpaid_details.jsp"
+              class="nav-link "> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Unpaid Details</p>
+            </a></li>
+            <li class="nav-item has-treeview"><a
+              href="overdue_details.jsp" class="nav-link "> <i
+                class="nav-icon fas fa-chart-pie"></i>
+                <p>Overdue Account Details</p>
+            </a></li>
+            
+            <li class="nav-item has-treeview"><a href="closed_account.jsp"
+              class="nav-link "> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Closed Account Details</p>
+            </a></li> -->
+
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+
+
+
+           <div class="content-wrapper">
+
+                 <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Detailed Form</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                <li class="breadcrumb-item active">Amount Details</li>
+              </ol>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+
+
+         <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+               <div class="card-header">
+              <h3 class="card-title">Pie Chart</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+         <div class="row form-group">
+                    <div class="col-md-6">
+                    <div id="piechart_3d" style="width: 500px; height: 500px;"></div>
+                  </div>
+
+                 <div class="col-md-6">                    
+                    <div id="piechart_3d1" style="width: 500px; height: 500px;"></div>
+                  </div>
+
+                  </div>
+             
+            </div> <!-- card body -->
+
+
+
+
+            <div class="row form-group">
+              
+
+                      <div class=" table-responsive">
+                <center><h3><u>Company Balance Sheet</u></h3></center>
+
+                <table  id="example1"  class="table table-bordered table-hover">
+
+                  <thead>
+                     
+                    <tr>
+                    
+                      <th>Sr.no</th>
+      
+          <th>Total Loan Amount Send</th> 
+      
+          <th>Total Target Amount Received</th>
+             <th>Total Profit Amount</th>
+           <th>Total Profit Percentage</th>
+  
+        <!--   <th>Action</th> -->
+
+             
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class=" w3-hover-border-black">
+              <td style="color: black"  class=" w3-hover-shadow">{{$index+1}}</td>
+               <td class=" w3-hover-shadow">{{pieObj.loanCnt}}</td>
+               <td class=" w3-hover-shadow">{{pieObj.targetCnt}}</td>
+                <td class=" w3-hover-shadow">{{pieObj.peramt}}</td>
+               <td class=" w3-hover-shadow">{{pieObj.per}}</td>
+              
+
+              
+         
+
+              </tr>
+                  </tbody>
+                </table>
+              </div> <!-- All list table -->
+
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+        <!-- /.row -->
+      </section>
+
+
+
+           </div>
+
+
+
+
+            <footer class="main-footer">
+    <strong>Copyright <a></a>.
+    </strong> All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.2
+    </div>
+  </footer>
+
+</div>
+
+
+
+
+<script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script
+    src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+
+  <!-- OPTIONAL SCRIPTS -->
+  <script src="dist/js/demo.js"></script>
+
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="plugins/raphael/raphael.min.js"></script>
+  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+
+  <!-- PAGE SCRIPTS -->
+  <script src="dist/js/pages/dashboard2.js"></script>
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+
+
+</div>
+</body>
+</html>

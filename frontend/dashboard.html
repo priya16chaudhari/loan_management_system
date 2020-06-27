@@ -1,0 +1,574 @@
+<!-- 2 nd close div -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>Dashboard</title>
+    
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet"
+  href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+  rel="stylesheet">
+
+<!--our structure shravani priya index.html files -->
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+  <link rel="stylesheet" href="resources/assets/css/angular-material.css">
+  <link rel="stylesheet" href="resources/assets/css/angular-material.min.css">
+
+  <script src="resources/assets/js/angular.min.js"></script>  
+  <script src="resources/assets/js/angular-animate.min.js"></script>
+  <script src="resources/assets/js/angular-aria.min.js"></script>
+  <script src="resources/assets/js/angular-messages.min.js"></script>
+  <script src="resources/assets/js/angular-material.min.js"></script> 
+  <script type="text/javascript" src="resources/assets/js/smart-table.min.js"></script>
+  <script src="resources/assets/js/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="resources/assets/js/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="resources/assets/js/ui-bootstrap-tpls.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+<!-- Date -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+
+<!-- pie chart--> 
+ 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<!-- Sidebar JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+ <script type="text/javascript" src="dashboard.js"></script>
+</head>
+<style type="text/css">
+  .divImg
+{
+  margin-top: -3px;margin-left: 886px;
+}
+.bellImg
+{
+  margin-left:2px;
+}
+  @media  screen and (max-width: 600px) {
+.bellImg
+{
+  margin-left: 169px !important;
+
+margin-top: 7px !important;
+}
+.divImg
+{
+margin-top: -8px !important;
+
+margin-left: 62px;
+}
+}
+
+</style>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+<div ng-app="dashboardapp" ng-controller="dashboardCtrl">
+<div class="wrapper">
+           <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" data-widget="pushmenu"
+          href="#"><i class="fas fa-bars"></i></a></li>
+        <li class="nav-item d-none d-sm-inline-block"><a
+          href="dashboard.html" class="nav-link">Home</a></li>
+
+      </ul>
+
+
+
+ <div class="row form-group">
+  <div class=" divImg" style="">
+
+    <img src="resources/assets/images/bell.png" height="42" width="42" ng-click="alertshow()" style="" class="bellImg"> 
+<b><sup style="color: black">{{contnotify}}</sup></b>
+  </div>
+</div>
+
+
+    </nav>
+
+
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="dashboard.html" class="brand-link">
+      <!--  <img
+        src="resources/assets/lms/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+        class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+        <center><span class="brand-text font-weight-light">AdminLTE 3</span></center>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <!-- <img src="resources/assets/lms/dist/img/AdminLTELogo.png"
+              class="img-circle elevation-2" alt="User Image"> -->
+          </div>
+          <div class="info">
+            <!-- <a href="dashboard.html" class="d-block">Admine</a> -->
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview "><a
+              href="dashboard.html" class="nav-link active"> <i
+                class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard 
+                </p>
+            </a></li>
+           <!--  <li class="nav-item"><a href="add_account.jsp"
+              class="nav-link "> <i class="nav-icon fas fa-th"></i>
+                <p>Add Account</p>
+            </a></li> -->
+            <li class="nav-item has-treeview"><a href="borrower.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Add Borrower</p>
+            </a></li>
+
+            <li class="nav-item has-treeview"><a href="adminBorrower.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Admin Module</p>
+            </a></li>
+
+             <li class="nav-item has-treeview"><a href="pettyCashMaster.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Petty Cash Module</p>
+            </a></li>
+
+            <li class="nav-item has-treeview"><a href="businessLoan.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Business Loan Module</p>
+            </a></li>
+
+            <li class="nav-item has-treeview"><a href="companyModels.html"
+              class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
+                <p>Company Balance Sheet</p>
+            </a></li>
+
+       
+
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+             <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Detailed Form</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                <li class="breadcrumb-item active">Details</li>
+              </ol>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+
+
+                      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <!-- <h3 class="card-title">DataTable</h3> -->
+                <div class="row">
+                  <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <label style="margin-left: 96px;">Select Catagory</label>
+                  <!-- <md-select ng-model="dashboardObj.list" ng-change="showList(dashboardObj.list)" name="list" type="text" class="" >
+                  <md-option ng-repeat="status in Lists" value="{{status}}">{{status}}</md-option>
+                  </md-select> -->
+                   <select class="form-control" ng-model="dashboardObj.list" ng-change="showList(dashboardObj.list)" name="list" type="text">
+        <option>all</option>
+        <option>pending</option>
+        <option>overdue</option>
+        <option>close</option>
+      </select>
+                </div>
+
+                <div class="col-md-4"></div>
+              </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+ 
+              <div class=" table-responsive" ng-show="allList">
+                <center><h3><u>All Borrower List</u></h3></center>
+
+                <table  id="example1" st-table="allLists1" st-safe-src="allLists"  class="table table-bordered table-hover">
+<tr>
+<button class="btn btn-info btn-sm" style="float:right !important;margin-bottom: 6px;" ng-click="ExportExcel()">Export Table Data To Excel File</button>
+</tr>
+                  <thead>
+                      <tr>  
+              <td colspan=13><input st-search="" ng-model="search " class="form-control"  
+                placeholder="global search ..." type="text"/ style="margin-top: 39px;"></td>
+                      </tr> 
+                    <tr>
+                      <!-- <th>Account ID</th>
+                      <th>Name</th>
+                      <th>Number</th>
+                      <th>Loan Amount</th>
+                      <th>Instant Deduction</th>
+                      <th>EMI</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Status</th>
+                      <th></th> -->
+                      <th>Sr.no</th>
+      
+          <th>Borrower Name</th> 
+      
+          <th>Borrower Account No</th>
+          <th>Remaining Amount</th> 
+            <th>Target Amount</th> 
+             <th>Last Date</th> 
+              <th>Status</th> 
+  
+        <!--   <th>Action</th> -->
+
+             
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="row in allLists1|filter:search" class=" w3-hover-border-black">
+              <td style="color: black"  class=" w3-hover-shadow">{{$index+1}}</td>
+               <td class=" w3-hover-shadow">{{row.name}}</td>
+               <td class=" w3-hover-shadow">{{row.accNo}}</td>
+               <td class=" w3-hover-shadow">{{row.remainAmt}}</td>
+                  <td class=" w3-hover-shadow">{{row.targetAmt}}</td>
+               <td class=" w3-hover-shadow">{{row.returnDate}}</td>
+                <td class=" w3-hover-shadow">{{row.status}}</td>
+                
+
+              
+         
+
+              </tr>
+                  </tbody>
+                </table>
+              </div> <!-- All list table -->
+
+              <div class="table-responsive" ng-show="pendingList">
+                <center><h3><u>Pending Borrower List</u></h3></center>
+                <table id="example2" st-table="pendingLists1" st-safe-src="pendingLists"  class="table table-bordered table-hover">
+                  <thead>
+                      <tr>  
+              <td colspan=13><input st-search="" ng-model="search " class="form-control"  
+                placeholder="global search ..." type="text"/ style="margin-top: 39px;"></td>
+                      </tr> 
+                    <tr>
+                     
+                      <th>Sr.no</th>
+      
+          <th>Borrower Name</th> 
+      
+          <th>Borrower Account No</th>
+          <th>Remaining Amount</th> 
+            <th>Target Amount</th> 
+             <th>Last Date</th> 
+              <th>Status</th> 
+  
+        <!--   <th>Action</th> -->
+
+             
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="row in pendingLists1|filter:search" class=" w3-hover-border-black">
+              <td style="color: black"  class=" w3-hover-shadow">{{$index+1}}</td>
+               <td class=" w3-hover-shadow">{{row.name}}</td>
+               <td class=" w3-hover-shadow">{{row.accNo}}</td>
+               <td class=" w3-hover-shadow">{{row.remainAmt}}</td>
+                  <td class=" w3-hover-shadow">{{row.targetAmt}}</td>
+               <td class=" w3-hover-shadow">{{row.returnDate}}</td>
+                <td class=" w3-hover-shadow">{{row.status}}</td>
+                
+                 <td>
+            <div class="col-md-12">
+            <button class="btn btn-info" data-toggle="tooltip" title="View"
+            ng-click="view(row.name);" >View
+            <!-- <i class="glyphicon glyphicon-pencil">
+              
+            </i> -->
+          </button>
+            </div>
+
+           <!--  <div class="col-md-6">
+          <button class="btn-hover color-1" data-toggle="tooltip" title="delete"
+            ng-click="delete(row.borrowerId);" >
+            <i class="glyphicon glyphicon-trash">
+              
+            </i>
+          </button>
+        </div> -->
+        </td>
+              </tr>
+                  </tbody>
+                </table>
+              </div> <!-- Pending list table -->
+
+
+
+              <div class="table-responsive" ng-show="overdueList">
+                <center><h3><u>Overdue Borrower List</u></h3></center>
+                <table id="example2" st-table="overdueLists1" st-safe-src="overdueLists"  class="table table-bordered table-hover">
+                  <thead>
+                      <tr>  
+              <td colspan=13><input st-search="" ng-model="search " class="form-control"  
+                placeholder="global search ..." type="text"/ style="margin-top: 39px;"></td>
+                      </tr> 
+                    <tr>
+                     
+                      <th>Sr.no</th>
+      
+          <th>Borrower Name</th> 
+      
+          <th>Borrower Account No</th>
+          <th>Remaining Amount</th> 
+            <th>Target Amount</th> 
+             <th>Last Date</th> 
+              <th>Status</th> 
+  
+        <!--   <th>Action</th> -->
+
+             
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="row in overdueLists1|filter:search" class=" w3-hover-border-black">
+              <td style="color: black"  class=" w3-hover-shadow">{{$index+1}}</td>
+               <td class=" w3-hover-shadow">{{row.name}}</td>
+               <td class=" w3-hover-shadow">{{row.accNo}}</td>
+               <td class=" w3-hover-shadow">{{row.remainAmt}}</td>
+                  <td class=" w3-hover-shadow">{{row.targetAmt}}</td>
+               <td class=" w3-hover-shadow">{{row.returnDate}}</td>
+                <td class=" w3-hover-shadow">{{row.status}}</td>
+                
+                 <td>
+            <div class="col-md-12">
+            <button class="btn btn-info" data-toggle="tooltip" title="View"
+            ng-click="view(row.name);" >View
+            <!-- <i class="glyphicon glyphicon-pencil">
+              
+            </i> -->
+          </button>
+            </div>
+
+           <!--  <div class="col-md-6">
+          <button class="btn-hover color-1" data-toggle="tooltip" title="delete"
+            ng-click="delete(row.borrowerId);" >
+            <i class="glyphicon glyphicon-trash">
+              
+            </i>
+          </button>
+        </div> -->
+        </td>
+              </tr>
+                  </tbody>
+                </table>
+              </div> <!-- overdueList list table -->
+
+              <div class="table-responsive" ng-show="closeList">
+                <center><h3><u>Close Borrower List</u></h3></center>
+                <table id="example2" st-table="closeLists1" st-safe-src="closeLists"  class="table table-bordered table-hover">
+                  <thead>
+                      <tr>  
+              <td colspan=13><input st-search="" ng-model="search " class="form-control"  
+                placeholder="global search ..." type="text"/ style="margin-top: 39px;"></td>
+                      </tr> 
+                    <tr>
+                     
+                      <th>Sr.no</th>
+      
+          <th>Borrower Name</th> 
+      
+          <th>Borrower Account No</th>
+          <th>Remaining Amount</th> 
+            <th>Target Amount</th> 
+             <th>Last Date</th> 
+              <th>Status</th> 
+  
+        <!--   <th>Action</th> -->
+
+             
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="row in closeLists1|filter:search" class=" w3-hover-border-black">
+              <td style="color: black"  class=" w3-hover-shadow">{{$index+1}}</td>
+               <td class=" w3-hover-shadow">{{row.name}}</td>
+               <td class=" w3-hover-shadow">{{row.accNo}}</td>
+               <td class=" w3-hover-shadow">{{row.remainAmt}}</td>
+                  <td class=" w3-hover-shadow">{{row.targetAmt}}</td>
+               <td class=" w3-hover-shadow">{{row.returnDate}}</td>
+                <td class=" w3-hover-shadow">{{row.status}}</td>
+                
+                 <td>
+            <div class="col-md-12">
+            <button class="btn btn-info" data-toggle="tooltip" title="View"
+            ng-click="view(row.name);" >View
+            <!-- <i class="glyphicon glyphicon-pencil">
+              
+            </i> -->
+          </button>
+            </div>
+
+           <!--  <div class="col-md-6">
+          <button class="btn-hover color-1" data-toggle="tooltip" title="delete"
+            ng-click="delete(row.borrowerId);" >
+            <i class="glyphicon glyphicon-trash">
+              
+            </i>
+          </button>
+        </div> -->
+        </td>
+              </tr>
+                  </tbody>
+                </table>
+              </div> <!-- overdueList list table -->
+
+
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+<!-- view button -->
+  
+<div class="panel panel-primary" ng-show="onViewBtnShow">
+  <div class="panel-heading"><center><h3>Borrower Loan Date Details</h3></center></div>
+  <div class="panel-body">
+
+    <div class="row form-group">
+      <div class="col-md-offset-4 col-md-4">
+       <h3><b>Name</b>&nbsp;<b>:{{obj}}</b></h3>
+      </div>
+    </div>
+<div class="row form-group">
+    <div class="col-md-4" style="">
+      <center><b>Dates</b></center>
+      <div ng-repeat="data in pendingViewListdate">
+      <center>{{data}}</center>
+      </div>
+      </div>
+
+       <div class="col-md-4" style="">
+       <center><b> Amount</b></center>
+      <div ng-repeat="row in pendingViewListAmt track by $index">
+      <center>{{row}}</center>
+      </div>
+      </div>
+
+
+       <div class="col-md-4" style="">
+        <center><b>Status</b></center>
+      <div ng-repeat="hh in pendingViewListStatus track by $index">
+      <center>{{hh}}</center>
+      </div>
+      </div>
+
+</div>
+</div>
+</div>
+
+      </section>
+
+
+
+
+    </div><!-- wrapper-content -->
+
+        <footer class="main-footer">
+    <strong>Copyright <a></a>.
+    </strong> All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.2
+    </div>
+  </footer>
+
+
+
+</div><!-- wrapper -->
+
+
+
+<!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script
+    src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+
+  <!-- OPTIONAL SCRIPTS -->
+  <script src="dist/js/demo.js"></script>
+
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="plugins/raphael/raphael.min.js"></script>
+  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+
+  <!-- PAGE SCRIPTS -->
+  <script src="dist/js/pages/dashboard2.js"></script>
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+
+  </div> <!-- ng-controller -->
+</body>
+</html>
